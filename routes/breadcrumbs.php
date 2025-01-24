@@ -157,3 +157,27 @@ Breadcrumbs::for('reports.transactions', function (BreadcrumbTrail $trail) {
     $trail->parent('dashboard');
     $trail->push('Transaksi', route('reports.transactions'));
 });
+
+// Dashboard > applicationsettings
+Breadcrumbs::for('appSett.index', function (BreadcrumbTrail $trail) {
+    $trail->parent('dashboard');
+    $trail->push('Application Settings', route('appSett.index'));
+});
+
+// Dashboard > appSett > Create
+Breadcrumbs::for('appSett.create', function (BreadcrumbTrail $trail) {
+    $trail->parent('appSett.index');
+    $trail->push('Create Application Settings', route('appSett.create'));
+});
+
+// Dashboard > appSett > Edit
+Breadcrumbs::for('appSett.edit', function (BreadcrumbTrail $trail, $appSett) {
+    $trail->parent('appSett.index');
+    $trail->push('Edit Application Settings', route('appSett.edit', $appSett));
+});
+
+// Dashboard > appSett > Detail
+Breadcrumbs::for('appSett.detail', function (BreadcrumbTrail $trail, $id) {
+    $trail->parent('appSett.index');
+    $trail->push('Application Settings Detail', route('appSett.detail', $id));
+});

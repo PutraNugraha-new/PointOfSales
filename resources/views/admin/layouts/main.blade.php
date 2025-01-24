@@ -115,7 +115,7 @@
 
     @vite('resources/css/style.css')
     @vite('resources/css/app.css')
-    <title>selalungoding | Dashboard</title>
+    <title>{{ $appTitle }}</title>
     <!-- Styles -->
     @livewireStyles
 </head>

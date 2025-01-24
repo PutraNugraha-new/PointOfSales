@@ -3,8 +3,7 @@
     <a href="/" class="flex items-center pb-4 justify-center">
         {{-- <img src="https://placehold.co/32x32" alt="" class="w-8 h-8 rounded object-cover"> --}}
         {{-- <img src="{{ asset('image/putra.png') }}" alt="" class="w-8 h-8 rounded object-cover"> --}}
-        <i class="ri-store-3-line"></i>
-        <span class="text-lg font-bold text-white md:text-indigo-950 ml-3 text-center">POS</span>
+        <span class="text-lg font-bold text-white md:text-indigo-950 ml-3 text-center">{{ $appTitle }}</span>
     </a>
     <ul class="mt-4">
         <span class="text-sm text-slate-400 tracking-wider">
@@ -17,8 +16,8 @@
                 <span class="text-sm">Dashboard</span>
             </a>
         </li>
-        <li class="mb-1 group">
-            <a href="#"
+        <li class="mb-1 group {{ Request::is('appSett') ? 'active' : '' }}">
+            <a href="{{ route('appSett.index') }}"
                 class="flex items-center py-2 px-4 text-slate-400 md:text-indigo-950 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100">
                 <i class="ri-settings-2-line mr-3 text-lg"></i>
                 <span class="text-sm">Application Settings</span>

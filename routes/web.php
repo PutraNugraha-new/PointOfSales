@@ -2,6 +2,7 @@
 
 use App\Imports\CategoryImport;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ApplicationSettings;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DashboardItemController;
 use App\Http\Controllers\DashboardUserController;
@@ -22,6 +23,7 @@ Route::middleware([
 ])->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/profile', [DashboardController::class, 'profile'])->name('profile');
+    Route::resource('appSett', ApplicationSettings::class);
 
     Route::resource('items', DashboardItemController::class);
     Route::post('/importItems', [DashboardItemController::class, 'import'])->name('importItems');
